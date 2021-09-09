@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.cors().and().csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//        http.headers().frameOptions().sameOrigin(); Caso habilite libera para todos ambientes
         http.authorizeRequests().anyRequest().permitAll();
     }
 

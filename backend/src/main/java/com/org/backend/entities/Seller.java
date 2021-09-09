@@ -31,7 +31,7 @@ public class Seller {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "seller")
     private List<Sale> sales = new ArrayList<>();
 
 }
