@@ -13,7 +13,6 @@ function DonutChart(): JSX.Element {
         }
     }
 
-
     return (
         <>
             <Chart
