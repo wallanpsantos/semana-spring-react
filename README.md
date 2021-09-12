@@ -2,7 +2,7 @@
 
 ## DOCKER
 
-Configurando o Banco de Dados Postgres
+Configurando o Banco de Dados Postgres (http://localhost:15432)
 
 
 ### Criando um volume para persistência de dados:
