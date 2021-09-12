@@ -1,5 +1,33 @@
 # semana-spring-react
 
+## DOCKER
+
+Configurando o Banco de Dados Postgres
+
+
+### Criando um volume para persistência de dados:
+
+❯ docker volume create --name semana-spring-react-volume
+
+### Criando um container para executar uma instância do PostgreSQL:
+
+❯ docker run --name semana-spring-react-postgres -p 5432:5432 -e "POSTGRES_PASSWORD=1234567" -v semana-spring-react-volume:/var/lib/postgresql/data -d postgres:9.6.23
+
+
+### Criando um container para execução do pgAdmin 4 (https://hub.docker.com/r/dpage/pgadmin4):
+❯ docker run --name semana-spring-react-pgadmin -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=wallanpereira09@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=1234567" -d dpage/pgadmin4
+
+
+### Já na aba Connection, preencher as seguintes configurações:
+
+Em Host name/address, informar o nome do container que corresponde à instância do PostgreSQL (teste-postgres)
+
+Em Port, definir o valor 5432 (porta indicada para acesso ao container quando da sua criação)
+
+No atributo Username será informado o usuário default do PostgreSQL (postgres), bem como a senha correspondente em Password (1234567)
+
+
+##
 
 # ![DevSuperior logo](https://raw.githubusercontent.com/devsuperior/bds-assets/main/ds/devsuperior-logo-small.png) Semana Spring React - Episódio 1
 
