@@ -13,7 +13,7 @@ Configurando o Banco de Dados Postgres (http://localhost:15432)
 
 ### Criando um container para executar uma instância do PostgreSQL:
 
-❯ docker run --name semana-spring-react-postgres --network=driver-rede-semana-spring-react -p 5432:5432 -e "POSTGRES_PASSWORD=1234567" -v semana-spring-react-volume:/var/lib/postgresql/data -d postgres:9.6.23
+❯ docker run --name semana-spring-react-postgres --network=driver-rede-semana-spring-react -p 5432:5432 -e "POSTGRES_PASSWORD=1234567" -v semana-spring-react-volume:/var/lib/postgresql/data -d postgres:12
 
 
 ### Criando um container para execução do pgAdmin 4 (https://hub.docker.com/r/dpage/pgadmin4):
