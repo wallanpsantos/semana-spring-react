@@ -4,6 +4,8 @@
 
 Configurando o Banco de Dados Postgres (http://localhost:15432)
 
+### Criando um driver de rede para comunicação entre banco de dados e GUI do Postgres:
+❯ docker network create driver-rede-semana-spring-react
 
 ### Criando um volume para persistência de dados:
 
@@ -11,11 +13,11 @@ Configurando o Banco de Dados Postgres (http://localhost:15432)
 
 ### Criando um container para executar uma instância do PostgreSQL:
 
-❯ docker run --name semana-spring-react-postgres -p 5432:5432 -e "POSTGRES_PASSWORD=1234567" -v semana-spring-react-volume:/var/lib/postgresql/data -d postgres:9.6.23
+❯ docker run --name semana-spring-react-postgres --network=driver-rede-semana-spring-react -p 5432:5432 -e "POSTGRES_PASSWORD=1234567" -v semana-spring-react-volume:/var/lib/postgresql/data -d postgres:9.6.23
 
 
 ### Criando um container para execução do pgAdmin 4 (https://hub.docker.com/r/dpage/pgadmin4):
-❯ docker run --name semana-spring-react-pgadmin -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=wallanpereira09@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=1234567" -d dpage/pgadmin4
+❯ docker run --name semana-spring-react-pgadmin --network=driver-rede-semana-spring-react -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=wallanpereira09@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=1234567" -d dpage/pgadmin4
 
 
 ### Já na aba Connection, preencher as seguintes configurações:
