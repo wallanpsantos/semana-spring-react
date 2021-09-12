@@ -13,7 +13,9 @@ function Home(): JSX.Element {
                     <hr />
                     <p>Esta aplicação consiste em exibir um dashboard a partir de dados fornecidos por um back end construído com Spring Boot.</p>
                 </div>
-                <Link to="/dashboard">Acessar dashboard</Link>
+                <Link to="/dashboard" className="btn btn-primary btn-lg">
+                    Acessar dashboard
+                </Link>
             </div>
             <Footer />
         </>
