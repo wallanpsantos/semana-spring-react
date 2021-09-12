@@ -1,6 +1,8 @@
 package com.org.backend.services;
 
 import com.org.backend.dto.SaleDTO;
+import com.org.backend.dto.SaleSuccessDTO;
+import com.org.backend.dto.SaleSumDTO;
 import com.org.backend.entities.Sale;
 import com.org.backend.repositories.SaleRepository;
 import com.org.backend.repositories.SellerRepository;
@@ -11,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -36,6 +40,16 @@ public class SaleService {
         Pageable pageable = PageRequest.of(initialPage, pageSize, Sort.by(sortBy));
         Page<Sale> sales = saleRepository.findAll(pageable);
         return sales.map(SaleDTO::new);
+    }
+
+    @Transactional(readOnly = true)
+    public List<SaleSumDTO> amountGroupedBySeller() {
+        return saleRepository.amountGroupedBySeller();
+    }
+
+    @Transactional(readOnly = true)
+    public List<SaleSuccessDTO> sucessGroupedBySeller() {
+        return saleRepository.sucessGroupedBySeller();
     }
 
 }

@@ -1,6 +1,8 @@
 package com.org.backend.controllers;
 
 import com.org.backend.dto.SaleDTO;
+import com.org.backend.dto.SaleSuccessDTO;
+import com.org.backend.dto.SaleSumDTO;
 import com.org.backend.services.SaleService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -31,6 +35,18 @@ public class SaleController {
     ) {
         Page<SaleDTO> saleDTOS = saleService.findAll(page, size, sort);
         return new ResponseEntity<>(saleDTOS, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/amount-by-seller")
+    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+        List<SaleSumDTO> saleSumDTOS = saleService.amountGroupedBySeller();
+        return ResponseEntity.ok(saleSumDTOS);
+    }
+
+    @GetMapping(value = "/success-by-seller")
+    public ResponseEntity<List<SaleSuccessDTO>> sucessGroupedBySeller() {
+        List<SaleSuccessDTO> saleSuccessDTOS = saleService.sucessGroupedBySeller();
+        return ResponseEntity.ok(saleSuccessDTOS);
     }
 
 }
