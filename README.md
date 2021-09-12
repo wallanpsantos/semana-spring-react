@@ -20,11 +20,11 @@ Configurando o Banco de Dados Postgres (http://localhost:15432)
 
 ### Já na aba Connection, preencher as seguintes configurações:
 
-Em Host name/address, informar o nome do container que corresponde à instância do PostgreSQL (teste-postgres)
+Em Host name/address, informar o nome do container que corresponde à instância do PostgreSQL (semana-spring-react-postgres)
 
 Em Port, definir o valor 5432 (porta indicada para acesso ao container quando da sua criação)
 
-No atributo Username será informado o usuário default do PostgreSQL (postgres), bem como a senha correspondente em Password (1234567)
+No atributo Username será informado o usuário do PostgreSQL (wallanpereira09@gmail.com), bem como a senha correspondente em Password (1234567)
 
 
 ##
