@@ -515,7 +515,8 @@ Argumentos que um componente React pode receber
 
 ## ERRATA NO EPISÓDIO 3 AOS 1:40:30 
 
-Favor trocar o nome da variável no Netlify de ~~BACKEND_URL~~ para **REACT_APP_BACKEND_URL**
+Favor trocar o nome da variável no Netlify de ~~BACKEND_URL~~ para **REACT_APP_BACKEND_URL** e adicionar a URL do backend no Heroku sem a barrinha no final
+Exemplo: https://semana-spring-rect.herokuapp.com
 
 Depois de trocar, vá em:
 
