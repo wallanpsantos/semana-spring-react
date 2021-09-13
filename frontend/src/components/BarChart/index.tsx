@@ -6,13 +6,13 @@ import { round } from 'utils/format';
 import { BASE_URL } from 'utils/requests';
 
 type SeriesData = {
-    name: String;
+    name: string;
     data: number[];
 }
 
 type ChartData = {
     labels: {
-        categories: String[];
+        categories: string[];
     };
     series: SeriesData[];
 }
